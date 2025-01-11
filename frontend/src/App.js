@@ -27,6 +27,8 @@ function App() {
       <Routes>
         {/* Public Routes */}
         <Route path='/login/:mobile' element={<AutoLogin />} />
+        {/* <Route path='/login' element={<LoginPage />} />  */}
+        
 
         <Route path='/logout' element={<LogoutPage />} />
          {/* Role-Based Protected Routes */}
