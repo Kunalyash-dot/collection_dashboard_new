@@ -181,7 +181,7 @@ function NachWiseCollectionChart() {
                   </td>
                   <td className="border px-4 py-2 text-center font-bold bg-green-300">
                     {Math.round(
-                      ((considerForPresentationData.totals["Bounced"] || 0) /
+                      ((considerForPresentationData.totals["Cleared"] || 0) /
                         (considerForPresentationData.totalCount || 0)) *
                         100
                     )}{" "}
@@ -273,7 +273,7 @@ function NachWiseCollectionChart() {
                     </td>
                     <td className="border px-4 py-2 text-center font-bold bg-green-300">
                       {Math.round(
-                        ((considerForPresentationData.totals["Bounced"] || 0) /
+                        ((considerForPresentationData.totals["Cleared"] || 0) /
                           (considerForPresentationData.totalCount || 0)) *
                           100
                       )}{" "}

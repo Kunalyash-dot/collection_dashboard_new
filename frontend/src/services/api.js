@@ -2,13 +2,15 @@ import axios from "axios";
 
 
 // Set up Axios instance with the backend base URL
-const API = axios.create({
-  baseURL:"http://35.200.162.255:8096/", // Backend server's URL
-});
 
 // const API = axios.create({
-//   baseURL: "http://localhost:8000", // Backend server's URL
+//   baseURL:process.env.REACT_APP_API_BASE_URL, // Backend server's URL
 // });
+
+
+const API = axios.create({
+  baseURL: "http://localhost:8000", // Backend server's URL
+});
 // for mobile
 // const API = axios.create({
 //   baseURL: "http://192.168.43.217:8000", // Backend server's URL

@@ -22,8 +22,8 @@ const customerSchema = new mongoose.Schema({
   finalStatus:{type:String,required:true},
   collectedAmount:{type:Number,required:true,default:0},
   yetToCollect:{type:Number,required:true,default:0},
-  latitude:{type:Number,required:true},
-  longitude:{type:Number,required:true},
+  latitude:{type:Number},
+  longitude:{type:Number},
   nachPresentation:{
     type:String,
     required:true
