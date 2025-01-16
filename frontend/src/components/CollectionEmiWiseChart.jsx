@@ -11,7 +11,7 @@ function CollectionEmiWiseChart() {
             const fetchData = async()=>{
                 try {
                     const result =await API.get('/api/charts/collection-emi-wise')
-                    console.log(result.data)
+                    // console.log(result.data)
                     setData(result.data)
                 } catch (error) {
                     console.log(error)

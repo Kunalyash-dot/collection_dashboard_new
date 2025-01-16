@@ -31,8 +31,9 @@ function DataTable() {
       try {
         setError(null);
         setLoading(true);
+       
         const customerData = await API.get("/api/customers/");
-        console.log(customerData.data);
+        // console.log(customerData.data);
         setCustomers(customerData.data);
         setLoading(false);
       } catch (error) {
@@ -54,13 +55,16 @@ function DataTable() {
           const response = await API.get(
             `/api/managers/managerData/${currentUser._id}`
           );
-          console.log(response.data.branches);
+          // console.log(response.data.branches);
           // Map the manager's branches to a consistent format
           fetchedBranches = response.data.branches.map((branch) => ({
             id: branch._id,
             branchName: branch.branchName,
           }));
         } else if (currentUser.role === "Admin") {
+          const response = await API.get("/api/branches/");
+          fetchedBranches = response.data;
+        } else if(currentUser.role === "General") {
           const response = await API.get("/api/branches/");
           fetchedBranches = response.data;
         }
@@ -75,7 +79,7 @@ function DataTable() {
         const result = await API.get("/api/charts/collection-emi-wise");
         const { emiCounts } = result.data;
         const noOfEmi = Object.keys(emiCounts);
-        console.log(noOfEmi);
+        // console.log(noOfEmi);
         setEmiCount(noOfEmi);
       } catch (error) {
         console.log(error);
@@ -118,7 +122,7 @@ function DataTable() {
             params: { branchName: filterBranch },
           });
           setEmployees(response.data);
-          console.log(response.data);
+          // console.log(response.data);
         } catch (error) {
           console.error("Error fetching employees", error);
         }

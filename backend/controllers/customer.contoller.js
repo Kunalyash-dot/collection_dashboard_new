@@ -133,6 +133,7 @@ export const fetchCustomer =async (req,res)=>{
    const { role, id } = req.user; // Extract user role and ID from the token
     let matchFilter = {}; // Initialize the match filter
 
+    console.log(role)
     if (role === "StateHead") {
       // Restrict data to the user's state
       const user = await User.findById(id);
@@ -151,10 +152,16 @@ export const fetchCustomer =async (req,res)=>{
     } else if (role === "Employee") {
       // Restrict data to the specific employee
       matchFilter.employee = id;
-    } else if (role !== "Admin") {
+    }
+    else if (role === "General") {
+      // Restrict data to the specific employee
+      matchFilter={};
+    }
+    else if (role !== "Admin") {
       // Deny access if the role is not recognized
       return res.status(403).json({ error: "Access denied." });
     }
+
 
     // Fetch customers with filters and populate references
     const customers = await Customer.find(matchFilter)

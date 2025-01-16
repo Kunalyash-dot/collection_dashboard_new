@@ -8,7 +8,7 @@ function BranchWiseCollectionChart() {
         const fetchData = async()=>{
             try {
                 const result =await API.get('/api/charts/branch-wise-collection')
-                console.log(result.data)
+                // console.log(result.data)
                 setData(result.data)
             } catch (error) {
                 console.error('Failed to fetch data' , error);

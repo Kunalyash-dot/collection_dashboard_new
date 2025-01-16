@@ -24,6 +24,9 @@ function AutoLogin() {
           case 'Admin':
             navigate('/');
             break;
+          case 'General':
+            navigate('/');
+            break;
           case 'StateHead':
             navigate('/statehead/dashboard');
             break;

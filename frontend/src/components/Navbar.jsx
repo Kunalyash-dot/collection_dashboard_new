@@ -49,9 +49,11 @@ function Navbar() {
     StateHead: "/statehead/table",
     Manager: "/manager/table",
     Employee: "/employee/table",
+    General :"/charts"
   };
   const dataRolePath = {
     Admin: "/data",
+    General:"/data",
     StateHead: "/statehead/data",
     Manager: "/manager/data",
     Employee: "/employee/data",

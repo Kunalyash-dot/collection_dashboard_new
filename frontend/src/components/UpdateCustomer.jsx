@@ -8,7 +8,7 @@ function UpdateCustomer({customer,onClose,onCustomerUpdate}) {
 useEffect(() => {
     fetchBranches(customer.state);
     fetcheEmployee (customer.branch.branchName);
-    console.log(customer.state)
+    // console.log(customer.state)
   }, [customer.state,customer.branchName]);
 
   const fetchBranches = async (state) => {
@@ -16,7 +16,7 @@ useEffect(() => {
       const res = await API.get("api/branches/statewise", {
         params: { state },
       });
-      console.log(res);
+      // console.log(res);
       setBranches(res.data);
     } catch (error) {
       console.log(error);
@@ -27,7 +27,7 @@ useEffect(() => {
       const res = await API.get(`api/users/branch?branchName=${branch}`,{
        
       });
-      console.log(res.data)
+      // console.log(res.data)
       setEmployee(res.data);
 
     } catch (error) {

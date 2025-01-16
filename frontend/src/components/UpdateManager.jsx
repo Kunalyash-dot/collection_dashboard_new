@@ -64,11 +64,11 @@ function UpdateManager({selectedManagerData,onClose,onManagerUpdate}) {
               value: branch.branchName, // Use branch name
               label: branch.branchName,
             }));
-            console.log(preSelectedBranches);
+            // console.log(preSelectedBranches);
             setBranchOptions(branchData);
             // setSelectedBranches([]); // Reset selected branches
             // setEmployeeOptions([]); // Reset employees
-            console.log(branchData)
+            // console.log(branchData)
             if (preSelectedBranches.length > 0) {
                 fetchEmployeesByBranches(preSelectedBranches);
               }
@@ -88,26 +88,26 @@ function UpdateManager({selectedManagerData,onClose,onManagerUpdate}) {
             //   setEmployeeOptions([]);
             //   return;
             // }
-            console.log(branches)
+            // console.log(branches)
             const branchNames = branches.map((branch) => branch.value);
-            console.log(branchNames)
+            // console.log(branchNames)
             const res = await API.post("/api/managers/emplyessByBranches", {
               branchNames
             });
-            console.log(res.data);
+            // console.log(res.data);
             const employeeData = res.data.map((emp) => ({
               value: emp.name,
               label: emp.name,
             }));
-            console.log(employeeData)
+            // console.log(employeeData)
             setEmployeeOptions(employeeData);
-            console.log(manager)
+            // console.log(manager)
             const managerEmployeeNames = manager.employees.map((employee)=>employee.name)
              // Pre-select employees if they exist
        const preSelectedEmployees = employeeData.filter((emp) =>
         managerEmployeeNames.includes(emp.value)
       );
-      console.log(preSelectedEmployees)
+      // console.log(preSelectedEmployees)
     setSelectedEmployees(preSelectedEmployees);
    
           } catch (error) {
@@ -124,8 +124,8 @@ function UpdateManager({selectedManagerData,onClose,onManagerUpdate}) {
             branchNames: selectedBranches.map((branch) => branch.value),
             employeeNames: selectedEmployees.map((emp) => emp.value),
           };
-    console.log(formData)
-    console.log(manager._id)
+    // console.log(formData)
+    // console.log(manager._id)
           const res = await API.put(`/api/managers/updateManager/${manager._id}`, formData);
           console.log("Manager updated:", res.data);
           onManagerUpdate(res.data);

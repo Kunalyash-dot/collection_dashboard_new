@@ -12,7 +12,7 @@ function CollectionSummaryChart() {
        
             try {
                 const result =await API.get('/api/charts/collection-summary')
-                console.log(result.data)
+                // console.log(result.data)
                 setData(result.data)
                 setLoading(false);
             } catch (error) {
@@ -70,7 +70,7 @@ function CollectionSummaryChart() {
                 {branches[branch][status] || 0} {/* Show 0 if no data for this status */}
               </td>
             ))}
-            <td className={status==='Collection Pending'|| status === 'PAR A/C Partial Collection'|| status=== 'Regular A/C Partial Collection' ?'border px-2 py-2 font-bold text-red-400 text-center':'border px-2 py-2 font-bold text-center'}>{totals[status]}</td>
+            <td className={status==='Collection Pending'|| status === 'PAR A/C Partial Collection'|| status=== 'Regular A/C Partial Collection' ?'border px-2 py-2 font-bold text-red-400 text-center':'border px-2 py-2 font-bold text-center'}>{totals[status] || 0}</td>
           </tr>
         ))}
         {/* Add row for branch totals */}

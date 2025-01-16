@@ -284,7 +284,7 @@ export const bulkDeleteCustomers = async (req, res) => {
     if (!req.file) {
       return res.status(400).json({ error: "No file uploaded" });
     }
-    console.log(__dirname)
+    // console.log(__dirname)
 
     // Parse the uploaded Excel file
     const workbook = xlsx.readFile(req.file.path);
@@ -339,7 +339,7 @@ export const bulkDeleteCustomers = async (req, res) => {
     );
 
     
-    console.log("Result File Path:", resultFilePath);
+    // console.log("Result File Path:", resultFilePath);
     const resultSheet = xlsx.utils.json_to_sheet(deleteResults);
     const resultWorkbook = xlsx.utils.book_new();
     xlsx.utils.book_append_sheet(resultWorkbook, resultSheet, "Results");
@@ -351,7 +351,7 @@ export const bulkDeleteCustomers = async (req, res) => {
       
     });
   } catch (error) {
-    console.log(__dirname)
+    // console.log(__dirname)
     console.error("Bulk delete error:", error);
     res.status(500).json({ error: "Bulk delete failed" });
 

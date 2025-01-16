@@ -22,7 +22,7 @@ function CreateManager({ onClose }) {
           value: branch.branchName, // Use branch name
           label: branch.branchName,
         }));
-        console.log(branchData);
+        // console.log(branchData);
         setBranchOptions(branchData);
         setSelectedBranches([]); // Reset selected branches
         setEmployeeOptions([]); // Reset employees
@@ -42,11 +42,11 @@ function CreateManager({ onClose }) {
         }
         // console.log(selectedBranches)
         const branchNames = selectedBranches.map((branch) => branch.value);
-        console.log(branchNames)
+        // console.log(branchNames)
         const res = await API.post("/api/managers/emplyessByBranches", {
           branchNames
         });
-        console.log(res);
+        // console.log(res);
         const employeeData = res.data.map((emp) => ({
           value: emp.name,
           label: emp.name,
@@ -61,7 +61,7 @@ function CreateManager({ onClose }) {
   }, [selectedBranches]);
 
 
-  console.log(selectedEmployees)
+  // console.log(selectedEmployees)
 
   const handleCreate = async (e) => {
     e.preventDefault();

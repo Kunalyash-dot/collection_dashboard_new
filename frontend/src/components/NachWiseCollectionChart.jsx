@@ -198,7 +198,7 @@ function NachWiseCollectionChart() {
       </div>
 
       <div className="md:w-[49%]">
-        {currentUser.role === "Admin"?(
+        {currentUser.role === "Admin" || currentUser.role === "General"?(
           <><div>
             <div>
           <h2 className="flex justify-center bg-red-100 font-semibold text-xl">State Wise Nach Status</h2>

@@ -42,6 +42,10 @@ function MithraPincodeWiseCollectionTable() {
           const response = await API.get('/api/branches/');
           fetchedBranches = response.data;
         }
+         else if (currentUser.role === "General") {
+          const response = await API.get('/api/branches/');
+          fetchedBranches = response.data;
+        }
   
         setBranches(fetchedBranches); // Update state with fetched branches
       } catch (error) {

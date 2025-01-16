@@ -34,7 +34,7 @@ function CreateUser({onClose}) {
   const handleChange = (e)=>{
     const { name, value } = e.target;
     setFormData({...formData,[name]:value})
-    console.log(formData)
+    // console.log(formData)
   }
 
   const handleCreate = (e)=>{
@@ -119,6 +119,7 @@ function CreateUser({onClose}) {
                 <option value="StateHead">StateHead</option>
                 <option value="Manager">Manager</option>
                 <option value="Employee">Employee</option>
+                <option value="General">General</option>
               </select>
             </div>
             <div className="mb-4 ">
